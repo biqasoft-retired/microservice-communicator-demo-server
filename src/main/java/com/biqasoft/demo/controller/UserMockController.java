@@ -40,11 +40,19 @@ public class UserMockController {
         return userAccounts;
     }
 
-    @RequestMapping(value = "/one", method = RequestMethod.GET)
+    @RequestMapping(value = "one", method = RequestMethod.GET)
     public
     @ResponseBody
     UserAccountDTO mockOneUser(HttpServletResponse response) {
         return new UserAccountDTO();
+    }
+
+
+    @RequestMapping(value = "null", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    UserAccountDTO returnNull(HttpServletResponse response) {
+        return null;
     }
 
 }
