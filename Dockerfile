@@ -12,7 +12,7 @@ RUN mkdir -p /usr/share/maven \
 ENV MAVEN_HOME /usr/share/maven
 
 RUN apt-get update
-RUN mkdir /tmp/build_maven/ && cd /tmp/build_maven && mvn package && mv target/release.jar /app.jar
+RUN mvn package && mv target/release.jar /app.jar
 
 EXPOSE 8080
 RUN bash -c 'touch /app.jar'
