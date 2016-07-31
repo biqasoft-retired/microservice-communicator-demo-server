@@ -8,7 +8,9 @@
 
 package com.biqasoft.demo.controller;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -69,6 +71,23 @@ public class UserMockController {
     UserAccountDTO returnInvalidServerError(HttpServletResponse response) {
         response.setStatus(500);
         return new UserAccountDTO();
+    }
+
+    @RequestMapping(value = "authenticate", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    UserAccountDTO returnInvalidServerError(@RequestBody AuthRequest authRequest) {
+        UserAccountDTO accountDTO = new UserAccountDTO();
+        accountDTO.setFirstname(authRequest.getUsername());
+        accountDTO.setLastname(authRequest.getPassword());
+        return accountDTO;
+    }
+
+    @RequestMapping(value = "echo", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    JsonNode echoServer(@RequestBody JsonNode echo) {
+       return echo;
     }
 
 }
