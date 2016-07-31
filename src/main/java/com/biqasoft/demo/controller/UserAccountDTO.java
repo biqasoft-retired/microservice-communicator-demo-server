@@ -21,6 +21,15 @@ public class UserAccountDTO {
     private String firstname;
     private String lastname;
 
+    private AddressDTO address = new AddressDTO();
+
+    public AddressDTO getAddress() {
+        return address;
+    }
+
+    public void setAddress(AddressDTO address) {
+        this.address = address;
+    }
 
     public String getId() {
         return id;
