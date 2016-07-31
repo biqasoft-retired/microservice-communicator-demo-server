@@ -13,7 +13,7 @@ ENV MAVEN_HOME /usr/share/maven
 
 RUN apt-get update && mkdir /tmp/build_maven
 ADD . /tmp/build_maven/
-RUN  cd /tmp/build_maven && ls && pwd && mvn package
+RUN  cd /tmp/build_maven && ls && pwd && mvn package && ls && tree
 ADD /tmp/build_maven/target/release.jar /app.jar
 
 EXPOSE 8080
