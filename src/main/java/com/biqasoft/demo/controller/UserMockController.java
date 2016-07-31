@@ -55,4 +55,20 @@ public class UserMockController {
         return null;
     }
 
+    @RequestMapping(value = "send_invalid_request", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    UserAccountDTO returnInvalidRequest(HttpServletResponse response) {
+       response.setStatus(422);
+        return new UserAccountDTO();
+    }
+
+    @RequestMapping(value = "simulate_that_server_is_busy_and_can_not_process_current_request", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    UserAccountDTO returnInvalidServerError(HttpServletResponse response) {
+        response.setStatus(500);
+        return new UserAccountDTO();
+    }
+
 }
