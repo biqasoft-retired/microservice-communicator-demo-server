@@ -1,4 +1,4 @@
-FROM java:openjdk-8u91-jre
+FROM java:openjdk-8u91-jdk
 VOLUME /tmp
 
 ENV MAVEN_VERSION 3.3.9
