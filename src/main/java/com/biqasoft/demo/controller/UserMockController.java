@@ -27,7 +27,7 @@ import java.util.List;
 @RequestMapping("/domain/users/mock")
 public class UserMockController {
 
-    @RequestMapping(value = "", method = RequestMethod.GET)
+    @RequestMapping("")
     public List<UserAccountDTO> mockGetAllUsers() {
         List<UserAccountDTO> userAccounts = new ArrayList<>();
         userAccounts.add(new UserAccountDTO());
