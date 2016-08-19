@@ -10,6 +10,7 @@ package com.biqasoft.demo.controller;
  *         All Rights Reserved
  */
 public class AuthRequest {
+
     private String username;
     private String password;
 
