@@ -18,8 +18,8 @@ public class UserAccountDTO {
 
     private String id = UUID.randomUUID().toString();
 
-    private String firstname;
-    private String lastname;
+    private String firstname = "Nikita";
+    private String lastname = "Bakaev";
 
     private AddressDTO address = new AddressDTO();
 
