@@ -9,7 +9,6 @@
 package com.biqasoft.demo.controller;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
@@ -76,6 +75,11 @@ public class UserMockController {
     @RequestMapping(value = "echo", method = RequestMethod.POST)
     public JsonNode echoServer(@RequestBody JsonNode echo) {
         return echo;
+    }
+
+    @RequestMapping(value = "authorization_header", method = RequestMethod.GET)
+    public String echoServerHeader(@RequestHeader("Authorization") String headerValue) {
+        return "{\"header\":\""+headerValue+"\"}";
     }
 
 }
